@@ -53,6 +53,6 @@ resource "instatus_component" "example" {
 Import is supported using the following syntax:
 
 ```shell
-# Component can be imported by specifying the string identifier.
-terraform import instatus_component.example <string_identifier>
+# Component can be imported by specifying the string identifier combined by page_id and id. Like this: page_id/id
+terraform import instatus_component.example <page_id/id>
 ```
