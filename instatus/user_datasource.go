@@ -3,10 +3,10 @@ package instatus
 import (
 	"context"
 
+	is "github.com/brunoscota/instatus-client-go"
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/datasource/schema"
 	"github.com/hashicorp/terraform-plugin-framework/types"
-	is "github.com/paydaycay/instatus-client-go"
 )
 
 // Ensure the implementation satisfies the expected interfaces.

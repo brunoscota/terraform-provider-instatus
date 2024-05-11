@@ -5,5 +5,4 @@ resource "instatus_component" "example" {
   status = "OPERATIONAL"
   show_uptime = true
   description = "Example App"
-  order = 0
 }

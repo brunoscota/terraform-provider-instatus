@@ -13,8 +13,16 @@ Interact with Instatus.
 ## Example Usage
 
 ```terraform
+terraform {
+  required_providers {
+    instatus = {
+      source = "brunoscota/instatus"
+    }
+  }
+}
+
 provider "instatus" {
-  api_key = "YOUR_API_KEY"
+  api_key = "dzxcsa3234423"
 }
 ```
 

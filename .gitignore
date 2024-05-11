@@ -38,3 +38,6 @@ override.tf.json
 .terraformrc
 terraform.rc
 terraform
+go.work
+go.work.sum
+terraform-provider-instatus

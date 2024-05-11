@@ -4,13 +4,13 @@ import (
 	"context"
 	"os"
 
+	is "github.com/brunoscota/instatus-client-go"
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/path"
 	"github.com/hashicorp/terraform-plugin-framework/provider"
 	"github.com/hashicorp/terraform-plugin-framework/provider/schema"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
 	"github.com/hashicorp/terraform-plugin-framework/types"
-	is "github.com/paydaycay/instatus-client-go"
 )
 
 // Ensure the implementation satisfies the expected interfaces
