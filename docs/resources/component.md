@@ -17,7 +17,6 @@ Manages a component.
 resource "instatus_component" "example" {
   page_id = "PAGE_ID"
   name = "App"
-  status = "OPERATIONAL"
   show_uptime = true
   description = "Example App"
 }
@@ -48,6 +47,6 @@ resource "instatus_component" "example" {
 Import is supported using the following syntax:
 
 ```shell
-# Component can be imported by specifying the string identifier.
-terraform import instatus_component.example <string_identifier>
+# Import identifier must be in the format 'pageId/componentId'
+terraform import instatus_component.example pageId/componentId
 ```
