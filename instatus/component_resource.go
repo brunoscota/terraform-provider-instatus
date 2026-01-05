@@ -135,7 +135,11 @@ func (r *componentResource) Create(ctx context.Context, req resource.CreateReque
 
 	// Map response body to schema and populate Computed attribute values
 	plan.ID = types.StringPointerValue(component.ID)
-	plan.Description = types.StringPointerValue(component.Description)
+	// Only update description if it was set in the plan or if API returned a non-empty value
+	// This prevents inconsistency between null and empty string
+	if !plan.Description.IsNull() || (component.Description != nil && *component.Description != "") {
+		plan.Description = types.StringPointerValue(component.Description)
+	}
 	plan.GroupName = types.StringPointerValue(component.Group.Name)
 	plan.GroupId = types.StringPointerValue(component.Group.Id)
 
@@ -168,7 +172,11 @@ func (r *componentResource) Read(ctx context.Context, req resource.ReadRequest, 
 	}
 	// Overwrite items with refreshed state
 	state.Name = types.StringPointerValue(component.Name)
-	state.Description = types.StringPointerValue(component.Description)
+	// Only update description if it was set in the state or if API returned a non-empty value
+	// This prevents inconsistency between null and empty string
+	if !state.Description.IsNull() || (component.Description != nil && *component.Description != "") {
+		state.Description = types.StringPointerValue(component.Description)
+	}
 	state.ShowUptime = types.BoolPointerValue(component.ShowUptime)
 	state.Grouped = types.BoolValue(component.Group.Name != nil)
 	state.GroupName = types.StringPointerValue(component.Group.Name)
@@ -215,7 +223,11 @@ func (r *componentResource) Update(ctx context.Context, req resource.UpdateReque
 	// Map response body to schema and populate Computed attribute values
 	plan.ID = types.StringPointerValue(component.ID)
 	plan.GroupName = types.StringPointerValue(component.Group.Name)
-	plan.Description = types.StringPointerValue(component.Description)
+	// Only update description if it was set in the plan or if API returned a non-empty value
+	// This prevents inconsistency between null and empty string
+	if !plan.Description.IsNull() || (component.Description != nil && *component.Description != "") {
+		plan.Description = types.StringPointerValue(component.Description)
+	}
 	plan.GroupId = types.StringPointerValue(component.Group.Id)
 
 	// Set state to fully populated data

@@ -1,8 +1,8 @@
 module terraform-provider-instatus
 
-go 1.21
+go 1.22.2
 
-toolchain go1.22.2
+toolchain go1.24.3
 
 require (
 	github.com/brunoscota/instatus-client-go v0.1.0
@@ -51,7 +51,6 @@ require (
 	github.com/russross/blackfriday v1.6.0 // indirect
 	github.com/shopspring/decimal v1.3.1 // indirect
 	github.com/spf13/cast v1.5.0 // indirect
-	github.com/stretchr/testify v1.8.4 // indirect
 	github.com/vmihailenco/msgpack/v5 v5.4.1 // indirect
 	github.com/vmihailenco/tagparser/v2 v2.0.0 // indirect
 	github.com/zclconf/go-cty v1.13.1 // indirect
